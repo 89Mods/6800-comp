@@ -1,0 +1,7 @@
+*.o
+*-backups
+*production
+*.lst
+*.p
+*.bin
+*.out
