@@ -252,8 +252,9 @@ entry_render_loop_over:
 get_menu_entries:
 	lda #3
 	jsr F_SPI_TX
-	clra
+	lda #$20
 	jsr F_SPI_TX
+	clra
 	jsr F_SPI_TX
 	lda #7
 	jsr F_SPI_TX
@@ -261,7 +262,8 @@ get_menu_entries:
 	sta romptr
 	jsr F_SPI_RX
 	sta romptr+1
-	clr romptr+2
+	lda #$20
+	sta romptr+2
 	clr num_entries
 	jsr F_ROM_DESEL
 	lda #9
